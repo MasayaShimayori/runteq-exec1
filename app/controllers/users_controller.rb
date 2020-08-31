@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    binding.irb
     if @user.save
       log_in @user
       flash[:success] = "Signup success!"
