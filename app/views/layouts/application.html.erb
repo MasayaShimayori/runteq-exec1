@@ -16,6 +16,10 @@
       <%=render 'shared/before_login_header' %>
     <% end %>
 
+    <% flash.each do |message_type,message| %>
+      <%= message %>
+    <% end %>
+
     <%= yield %>
     
     <%= render 'shared/footer' %>
