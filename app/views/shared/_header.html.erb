@@ -1,6 +1,6 @@
 <header>
   <nav class='navbar navbar-expand-lg navigation navbar-light bg-light'>
-    <a class='navbar-brand' href='/'>
+  <a class='navbar-brand' href='/'>
       <%= image_tag src='logo.png' %>
     </a>
     <button class='navbar-toggler' data-toggle='collapse' data-target='#navbarSupportedContent'
@@ -36,7 +36,8 @@
             <%= form_with(url: logout_path, local: true) do |f| %>
               <%= f.submit 'ログアウト', class: 'dropdown-item' %>
             <% end %>
-            <!-- <a class='dropdown-item' href='/logout'>ログアウト</a> -->
+
+                    <!-- <a class='dropdown-item' href='/logout'>ログアウト</a> -->
           </div>
         </li>
       </ul>
