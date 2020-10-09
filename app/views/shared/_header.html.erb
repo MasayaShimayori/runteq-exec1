@@ -33,11 +33,18 @@
             <div class='dropdown-item'>らんてっく たろう</div>
             <div class='dropdown-divider'></div>
             <a class='dropdown-item' href='#'>プロフィール</a>
+             
             <%= form_with(url: logout_path, local: true) do |f| %>
               <%= f.submit 'ログアウト', class: 'dropdown-item' %>
             <% end %>
+           ログアウト 
+            <!--
+            <form action='/logout' method='post'>
+              <input class='dropdown-item' type='submit' value='ログアウト' name='commit' data-disible-with='ログアウト'>
+            </form>
+            <a class='dropdown-item' href='/logout'>ログアウト</a>
+            -->
 
-                    <!-- <a class='dropdown-item' href='/logout'>ログアウト</a> -->
           </div>
         </li>
       </ul>
