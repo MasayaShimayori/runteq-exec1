@@ -33,11 +33,8 @@
             <div class='dropdown-item'>らんてっく たろう</div>
             <div class='dropdown-divider'></div>
             <a class='dropdown-item' href='#'>プロフィール</a>
-             
-            <%= form_with(url: logout_path, local: true) do |f| %>
-              <%= f.submit 'ログアウト', class: 'dropdown-item' %>
-              ログアウト
-            <% end %>
+
+            <%= link_to 'ログアウト', logout_path, class: 'dropdown-item', method: 'delete'  %>
             <!--
             <%= form_with(url: logout_path, local: true) do |f| %>
               <input class='dropdown-item' type='submit' value='ログアウト'> 
