@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
 
     if @user
       redirect_to root_path
-      flash[:success] = 'ログインに成功しました'
+      flash[:success] = 'ログインしました'
     else
       flash.now[:danger] = 'ログインに失敗しました'
       render :new
