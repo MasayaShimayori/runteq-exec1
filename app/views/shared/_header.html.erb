@@ -1,8 +1,9 @@
 <header>
   <nav class='navbar navbar-expand-lg navigation navbar-light bg-light'>
-  <a class='navbar-brand' href='/'>
+
+    <%= link_to root_path, class: 'navbar-brand' do %>
       <%= image_tag src='logo.png' %>
-    </a>
+    <% end %>
     <button class='navbar-toggler' data-toggle='collapse' data-target='#navbarSupportedContent'
       aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
       <span class='navbar-toggler-icon'></span>
@@ -16,13 +17,13 @@
           </a>
 
           <div class='dropdown-menu dropdown-menu-right'>
-            <a class='dropdown-item' href='#'>掲示板一覧</a>
-            <a class='dropdown-item' href='#'>掲示板作成</a>
+            <%= link_to '掲示板一覧', '#', class: 'dropdown-item' %>
+            <%= link_to '掲示板作成', '#', class: 'dropdown-item' %>
           </div>
         </li>
 
         <li class='nav-item'>
-          <a class='nav-link' href='#'>ブックマーク一覧</a>
+          <%= link_to 'ブックマーク一覧', '#', class: 'navlink' %>
         </li>
 
         <li class='nav-item dropdown dropdown-slide'>
@@ -32,19 +33,9 @@
           <div class='dropdown-menu dropdown-menu-right'>
             <div class='dropdown-item'>らんてっく たろう</div>
             <div class='dropdown-divider'></div>
-            <a class='dropdown-item' href='#'>プロフィール</a>
+            <%= link_to 'プロフィール', '#', class: 'dropdown-item' %>
 
-            <%= link_to 'ログアウト', logout_path, class: 'dropdown-item', method: 'delete'  %>
-            <!--
-            <%= form_with(url: logout_path, local: true) do |f| %>
-              <input class='dropdown-item' type='submit' value='ログアウト'> 
-            <% end %>
-            <form action='/logout' method='post'>
-              <input class='dropdown-item' type='submit' value='ログアウト' name='commit' data-disible-with='ログアウト'>
-            </form>
-            <a class='dropdown-item' href='/logout'>ログアウト</a>
-            -->
-
+            <%= link_to (t 'defaults.logout'), logout_path, class: 'dropdown-item', method: 'delete'  %>
           </div>
         </li>
       </ul>

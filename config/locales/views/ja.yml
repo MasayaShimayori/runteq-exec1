@@ -1,16 +1,24 @@
 ja:
-  helpers:
-    label:
-      email: メールアドレス
-      password: パスワード
-  user_sessions:
-    new:
-      login: ログイン
-      sessions: 登録ページへ
-      forget_password: パスワードをお忘れの方はこちら
+  defaults:
+    login: ログイン
+    register: 登録 
+    logout: ログアウト
   users:
     new:
       title: ユーザー登録
-      login: ログインページへ
-    form:
-      register: 登録
+      to_login_page: ログインページへ
+  user_sessions:
+    new:
+      title: ログイン
+      to_register_page: 登録ページへ
+      forget_password: パスワードをお忘れの方はこちら
+  boards:
+    index:
+      title: 掲示板一覧
+    new:
+      title: 掲示板作成
+    bookmarks:
+      title: ブックマーク一覧
+  profiles:
+    show:
+      title: プロフィール

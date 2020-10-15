@@ -11,8 +11,8 @@ gem 'rails-i18n'
 gem 'sorcery'
 gem 'pry-byebug'
 
-gem 'font-awesome-sass'
-gem 'bootstrap', '~>4.1.1'
+gem 'bootstrap', '~>4.3.1'
+gem 'font-awesome-sass', '~> 5.11.2'
 gem 'jquery-rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
