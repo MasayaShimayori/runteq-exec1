@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   def top
     user = User.find_by(params[:id])
     return unless user
+
     @user = UserDecorator.new(user)
   end
 end
