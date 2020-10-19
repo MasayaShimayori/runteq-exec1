@@ -11,7 +11,6 @@ class UserDecorator < ApplicationDecorator
   #   end
 
   def full_name
-    "#{last_name} #{last_name}"
+    "#{last_name} #{first_name}"
   end
-  
 end
