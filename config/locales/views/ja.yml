@@ -18,7 +18,8 @@ ja:
   boards:
     index:
       title: 掲示板一覧
-      fail: '掲示板がありません'
+      fail: 掲示板がありません
+      login: ログインしてください
     new:
       title: 掲示板作成
     bookmarks:
