@@ -4,10 +4,10 @@ class BoardsController < ApplicationController
       if Board.exists?
         @boards = Board.all
       else
-        redirect_to login_url, danger: (t '.fail')
+        redirect_to login_path, danger: (t '.fail')
       end
     else
-      redirect_to login_url, danger: (t '.login')
+      redirect_to login_path, danger: (t '.login')
     end
   end
 end

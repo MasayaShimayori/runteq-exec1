@@ -5,7 +5,7 @@ class UserSessionsController < ApplicationController
     @user = login(params[:email], params[:password])
 
     if @user
-      redirect_to boards_url
+      redirect_to boards_path
       flash[:success] = 'ログインしました'
     else
       flash.now[:danger] = 'ログインに失敗しました'
