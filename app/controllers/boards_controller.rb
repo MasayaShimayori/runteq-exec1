@@ -1,10 +1,10 @@
 class BoardsController < ApplicationController
   def index
-    if current_user
-      if Board.exists?
-        @boards = Board.all
-      else
-        redirect_to login_path, danger: (t '.fail')
+    if logged_in?
+      @boards = Board.all
+      if @boards.blank?
+        # redirect_to login_path,
+        flash[:danger] = (t '.fail')
       end
     else
       redirect_to login_path, danger: (t '.login')
