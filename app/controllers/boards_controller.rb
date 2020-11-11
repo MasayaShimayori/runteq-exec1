@@ -13,14 +13,17 @@ class BoardsController < ApplicationController
 
   def new
     @board = Board.new
+    unless logged_in?
+      redirect_to login_path, danger: (t '.login')
+    end
   end
 
   def create
     @board = current_user.boards.build(board_params)
     if @board.save
-      redirect_to boards_path,success: "掲示板を作成しました"
+      redirect_to boards_path, success: '掲示板を作成しました'
     else
-      flash.now[:danger] = "掲示板を作成できませんでした"
+      flash.now[:danger] = '掲示板を作成できませんでした'
       render :new
     end
   end
