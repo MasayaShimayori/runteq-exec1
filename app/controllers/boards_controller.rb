@@ -5,9 +5,6 @@ class BoardsController < ApplicationController
 
   def new
     @board = Board.new
-    unless logged_in?
-      redirect_to login_path, danger: (t '.login')
-    end
   end
 
   def create
