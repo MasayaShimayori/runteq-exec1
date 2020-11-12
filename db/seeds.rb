@@ -19,11 +19,11 @@ User.create!( first_name: 'hoge',
    password_confirmation: 'hoge' )
 
 
-30.times do |n|
+10.times do |n|
   first_name   = Faker::Name.first_name  
   last_name   = Faker::Name.last_name  
-  email  = "example-#{n+1}@user.com"
-  password = "hoge"
+  email  = Faker::Internet.email
+  password = "12345678"
   User.create!( first_name: first_name,
                  last_name: last_name,
                      email: email,
@@ -31,8 +31,8 @@ User.create!( first_name: 'hoge',
      password_confirmation: password ) 
 end
 
-user = User.first
 20.times do
+  user = User.offset(rand(User.count)).first
   title = "hogehoge"
   body = "hogehogehogehoge"
   user.boards.create!( title: title, body: body )
