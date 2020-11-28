@@ -35,6 +35,7 @@ end
   user = User.offset(rand(User.count)).first
   title = "hogehoge"
   body = "hogehogehogehoge"
-  user.boards.create!( title: title, body: body )
+  image = open("./app/assets/images/board_placeholder.png")
+  user.boards.create!( title: title, body: body, image: image )
 end
 
