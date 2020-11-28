@@ -13,7 +13,7 @@ $(function(){
 		if (input.files && input.files[0]){
 			var reader = new FileReader();
 			reader.onload = function(e){
-				$('#board_image_prev').attr('src', e.target.result);
+				$('#board_img_prev').attr('src', e.target.result);
 			}
 			reader.readAsDataURL(input.files[0]);
 		}
