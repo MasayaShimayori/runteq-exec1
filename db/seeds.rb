@@ -39,3 +39,9 @@ end
   user.boards.create!( title: title, body: body, image: image )
 end
 
+20.times do
+  user = User.offset(rand(User.count)).first
+  board = Board.offset(rand(Board.count)).first
+  body = "aaaaaaaaaaaaaaaa"
+  board.comments.create!( body: body, user_id: user.id )
+end
