@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :set_board, only: %i[update destroy]
+  before_action :set_board, only: %i[edit update destroy]
 
   def show
     @board = Board.find(params[:id])
@@ -26,7 +26,6 @@ class BoardsController < ApplicationController
   end
 
   def edit
-    @board = current_user.boards.find(params[:id]) 
   end
 
   def update
@@ -34,7 +33,7 @@ class BoardsController < ApplicationController
       redirect_to boards_path, success: '掲示板を更新しました'
     else
       flash.now[:danger] = '掲示板を更新できませんでした'
-      render :new 
+      render :new
     end
   end
 
@@ -50,6 +49,6 @@ class BoardsController < ApplicationController
   end
 
   def set_board
-    @board = Board.find(params[:id])
+    @board = current_user.boards.find(params[:id])
   end
 end
