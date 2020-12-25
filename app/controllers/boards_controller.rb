@@ -29,7 +29,7 @@ class BoardsController < ApplicationController
 
   def update
     if @board.update(board_params)
-      redirect_to boards_path, success: '掲示板を更新しました'
+      redirect_to board_path(@board), success: '掲示板を更新しました'
     else
       flash.now[:danger] = '掲示板を更新できませんでした'
       render :new
@@ -39,7 +39,7 @@ class BoardsController < ApplicationController
   def destroy
     @board.destroy!
     redirect_to boards_path
-    flash[:success] = "掲示板を削除しました"
+    flash[:success] = '掲示板を削除しました'
   end
 
   private
