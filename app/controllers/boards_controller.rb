@@ -25,8 +25,7 @@ class BoardsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @board.update(board_params)
@@ -40,6 +39,7 @@ class BoardsController < ApplicationController
   def destroy
     @board.destroy!
     redirect_to boards_path
+    flash[:success] = "掲示板を削除しました"
   end
 
   private
