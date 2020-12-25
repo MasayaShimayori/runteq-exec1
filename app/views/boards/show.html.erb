@@ -14,6 +14,16 @@
               <h3 style='display: inline;'>
                 <%= @board.title %>
               </h3>
+              <div class="mr10 float-right">
+                <% if current_user.own?(@board) %>
+                  <%= link_to board_path(@board), method: 'delete', data: { confirm: '削除しますか?' } do %>
+                    <%= icon 'fas', 'trash', class: 'pr-1' %>
+                  <% end %>
+                  <%= link_to edit_board_path(@board) do %>
+                    <%= icon 'fa', 'pen' %>
+                  <% end %>
+                <% end %>
+              </div>
               <ul class="list-inline">
                 <li class="list-inline-item">by <%= @board.user.decorate.full_name %></li>
                 <li class="list-inline-item"><%= l @board.created_at, format: :long %></li>

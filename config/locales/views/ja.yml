@@ -31,6 +31,9 @@ ja:
       no_result: '掲示板がありません'
     new:
       title: '掲示板作成'
+      submit: '登録する'
+    edit:
+      submit: '更新'
     bookmarks:
       title: 'ブックマーク一覧'
   comments:
