@@ -42,6 +42,10 @@ class BoardsController < ApplicationController
     flash[:success] = '掲示板を削除しました'
   end
 
+  def bookmarks
+    @bookmarks = current_user.bookmarks
+  end
+
   private
 
   def board_params

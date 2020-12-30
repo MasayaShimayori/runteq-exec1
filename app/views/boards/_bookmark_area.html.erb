@@ -1,0 +1,5 @@
+<% if board.bookmarks.any? %>
+  <%= render 'unbookmark', board: board, bookmark: bookmark %>
+<% else %>
+  <%= render 'bookmark', board: board, bookmark: bookmark %>
+<% end %>

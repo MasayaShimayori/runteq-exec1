@@ -7,14 +7,13 @@
                   <%= link_to "#{board.title}", board %>
                 </h4>
                 <div class='mr10 float-right'>
+
                   <% if current_user.own?(board) %>
-                    <%= link_to board_path(board), id: "button-delete-#{board.id}",  method: 'delete', data: { confirm: '削除しますか?' } do %>
-                      <%= icon 'fas', 'trash', class: 'pr-1' %>
-                    <% end %>
-                    <%= link_to edit_board_path(board), id: "button-edit-#{board.id}" do %>
-                      <%= icon 'fa', 'pen' %>
-                    <% end %>
+                    <%= render 'crud_menus', board: board %>
+                  <% else %>
+                    <%= render 'bookmark_area', board: board, bookmark: board.search_bookmark(current_user) %>
                   <% end %>
+
                 </div>
                 <ul class="list-inline">
                   <li class="list-inline-item">

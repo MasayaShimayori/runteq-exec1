@@ -1,8 +1,0 @@
-<% if current_user.own?(board) %>
-  <%= link_to board_path(board), method: 'delete', data: { confirm: '削除しますか?' } do %>
-    <%= icon 'fas', 'trash', class: 'pr-1' %>
-  <% end %>
-  <%= link_to edit_board_path(board) do %>
-    <%= icon 'fa', 'pen' %>
-  <% end %>
-<% end %>
