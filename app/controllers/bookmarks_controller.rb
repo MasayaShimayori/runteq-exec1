@@ -12,14 +12,8 @@ class BookmarksController < ApplicationController
     @board = current_user.bookmarks.find(params[:id]).board
     current_user.unbookmark(@board)
     respond_to do |format|
-      format.html {redirect_back fallback_location: root_path, success: 'ブックマークを外しました'}
+      format.html { redirect_back fallback_location: root_path, success: 'ブックマークを外しました' }
       format.js
     end
-  end
-
-  private
-
-  def set_board
-    board = Board.find_by(id: params[:board_id])
   end
 end
