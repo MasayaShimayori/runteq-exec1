@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :boards do
     get :bookmarks, on: :collection
-    resources :bookmarks, only: %i[create destroy]
     resources :comments, shallow: true
   end
+  resources :bookmarks, only: %i[create destroy]
 end

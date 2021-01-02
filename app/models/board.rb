@@ -6,8 +6,4 @@ class Board < ApplicationRecord
 
   validates :title, length: { maximum: 255 }, presence: true
   validates :body, length: { maximum: 65_535 }, presence: true
-
-  def search_bookmark(user)
-    bookmarks.find_by(user: user)
-  end
 end

@@ -17,11 +17,8 @@
   <div class="row">
     <div class="col-12">
       <div class="row">
-        <% if @bookmarks.present? %>
-          <% @bookmarks.each do |bookmark| %>
-            <% board = Board.find_by(id: bookmark.board_id) %>
-              <%= render 'board', board: board %>
-            <% end %>
+        <% if @bookmark_boards.present? %>
+          <%= render @bookmark_boards %>
         <% else %>
           <p><%= t('ブックマーク中の掲示板がありません') %></p>
         <% end %>

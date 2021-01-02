@@ -1,19 +1,25 @@
 class BookmarksController < ApplicationController
-  before_action :set_board
   def create
-    @bookmark = @board.bookmarks.create(user: current_user)
-    redirect_to boards_path, success: 'ブックマークしました'
+    @board = Board.find(params[:board_id])
+    current_user.bookmark(@board)
+    respond_to do |format|
+      format.html { redirect_back fallback_location: root_path, success: 'ブックマークしました' }
+      format.js
+    end
   end
 
   def destroy
-    @bookmark = @board.bookmarks.find_by(user: current_user)
-    @bookmark.destroy
-    redirect_to boards_path, success: 'ブックマークを外しました'
+    @board = current_user.bookmarks.find(params[:id]).board
+    current_user.unbookmark(@board)
+    respond_to do |format|
+      format.html {redirect_back fallback_location: root_path, success: 'ブックマークを外しました'}
+      format.js
+    end
   end
 
   private
 
   def set_board
-    @board = Board.find_by(id: params[:board_id])
+    board = Board.find_by(id: params[:board_id])
   end
 end

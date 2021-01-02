@@ -11,7 +11,7 @@
                   <% if current_user.own?(board) %>
                     <%= render 'crud_menus', board: board %>
                   <% else %>
-                    <%= render 'bookmark_area', board: board, bookmark: board.search_bookmark(current_user) %>
+                    <%= render 'bookmark_area', board: board %>
                   <% end %>
 
                 </div>
