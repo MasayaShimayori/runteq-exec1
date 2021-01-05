@@ -4,15 +4,7 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.create(comment_params)
     @board = Board.find_by(id: params[:board_id])
-    respond_to do |format|
-    format.html {
-      if @comment.save
-        redirect_to @board, success: 'コメントを作成できました'
-      else
-        redirect_to @board, danger: 'コメントを作成できませんでした'
-      end }
-    format.js
-    end
+    @comment.save
   end
 
   def destroy
