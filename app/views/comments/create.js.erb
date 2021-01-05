@@ -1,0 +1,7 @@
+$("#error-messages").val('')
+<% if @comment.save %>
+  $("#js-table-comment").prepend("<%= j(render('comments/comment', comment: @comment)) %>") 
+  $("#comment_body").val('')
+<% else %>
+  $("#js-form-comment-file").replaceWith("<%= j(render('comments/form')) %>")
+<% end %>
