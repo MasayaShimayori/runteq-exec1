@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :avatar_image, AvatarImageUploader
   authenticates_with_sorcery!
 
   validates :first_name, length: { maximum: 255 }, presence: true
