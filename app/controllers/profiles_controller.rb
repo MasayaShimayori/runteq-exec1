@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
     @user = current_user
   end
 
-  def update 
+  def update
     @user = current_user
     if current_user.update(user_params)
       redirect_to profile_path, notice: 'ユーザーを更新しました'
